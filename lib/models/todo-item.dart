@@ -1,4 +1,5 @@
 import 'package:flutter_sqlite_demo/models/model.dart';
+import 'package:flutter/foundation.dart';
 
 class TodoItem extends Model {
 
@@ -22,11 +23,15 @@ class TodoItem extends Model {
 	}
 
 	static TodoItem fromMap(Map<String, dynamic> map) {
-		
+
+		debugPrint('map: $map');
+
+		bool bol = map['complete'] == 1;
+
 		return TodoItem(
-			id: map['id'],
-			task: map['task'],
-			complete: map['complete'] == 1
+			id: map['id'] as int,
+			task: map['task'].toString(),
+			complete: bol
 		);
 	}
 }

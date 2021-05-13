@@ -99,11 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
 				return AlertDialog(
 					title: Text("Create New Task"),
 					actions: <Widget>[
-						FlatButton(
+						TextButton(
 							child: Text('Cancel'),
 							onPressed: () => Navigator.of(context).pop()
 						),
-						FlatButton(
+						TextButton(
 							child: Text('Save'),
 							onPressed: () => _save()
 						)						
